@@ -37,7 +37,7 @@ const Person_PhoneNumber_Type = addressbookSchemas.Person_PhoneNumber_Type;
 function writePackedMessageToStream(writeStream, message) {
   const arrayBuffer = message.toPackedArrayBuffer();
   // Beacause streams can't handle ArrayBuffers
-  const buffer = new Buffer(arrayBuffer);
+  const buffer = Buffer.from(arrayBuffer);
   writeStream.write(buffer);
 }
 
